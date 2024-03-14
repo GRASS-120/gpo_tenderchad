@@ -1,0 +1,20 @@
+[tool.poetry]
+name = "tender-service"
+version = "0.1.0"
+description = ""
+authors = ["Decim000 <twitter_with_cranberries@mail.ru>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+fastapi = "^0.105.0"
+uvicorn = {extras = ["standard"], version = "^0.24.0.post1"}
+mypy = "^1.7.1"
+beanie = "^1.23.6"
+pydantic-settings = "^2.1.0"
+pymongo = "^4.6.1"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
