@@ -14,4 +14,4 @@ async def init_mongo_db():
     )
 
     # Initialize beanie with a database
-    await init_beanie(database=client.db_name, document_models=[FederalLaw, PurchaseStage, Tender])
+    await init_beanie(database=client.tender, document_models=[FederalLaw, PurchaseStage, Tender])

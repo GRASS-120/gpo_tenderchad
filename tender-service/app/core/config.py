@@ -7,6 +7,8 @@ class Settings(BaseSettings):
     MONGO_PORT: str
     MONGO_USER: str
     MONGO_PASSWORD: str
+    APP_HOST: str
+    APP_PORT: int
 
     model_config = SettingsConfigDict(env_file="app/.env")
 
