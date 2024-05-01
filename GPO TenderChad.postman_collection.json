@@ -1,0 +1,164 @@
+{
+	"info": {
+		"_postman_id": "a2ec2e2a-342a-4f8a-b005-8cdf1a878e73",
+		"name": "GPO TenderChad",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "14121623"
+	},
+	"item": [
+		{
+			"name": "tender-service",
+			"item": [
+				{
+					"name": "get one law by law",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8001/api/v1/tender/law?law=44-ФЗ",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8001",
+							"path": [
+								"api",
+								"v1",
+								"tender",
+								"law"
+							],
+							"query": [
+								{
+									"key": "law",
+									"value": "44-ФЗ"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "load preset tender data",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8001/api/v1/tender/preset-database",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8001",
+							"path": [
+								"api",
+								"v1",
+								"tender",
+								"preset-database"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "it_search-service",
+			"item": [
+				{
+					"name": "get searched tender",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/v1/it_search/search_tender?search=Закупка компьютеров&stage=Размещение закупки&law=223-ФЗ",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"it_search",
+								"search_tender"
+							],
+							"query": [
+								{
+									"key": "search",
+									"value": "Закупка компьютеров"
+								},
+								{
+									"key": "stage",
+									"value": "Размещение закупки"
+								},
+								{
+									"key": "law",
+									"value": "223-ФЗ"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "analysis-service",
+			"item": [
+				{
+					"name": "configure tender area",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8001/api/v1/analysis/configure",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8001",
+							"path": [
+								"api",
+								"v1",
+								"analysis",
+								"configure"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "it_analysis-service",
+			"item": [
+				{
+					"name": "test",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8003/api/v1/it_analysis/test",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8003",
+							"path": [
+								"api",
+								"v1",
+								"it_analysis",
+								"test"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "user-service",
+			"item": []
+		}
+	]
+}
