@@ -8,7 +8,6 @@ from app.core.database import init_mongo_db
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
-    # Load the ML model
     await init_mongo_db()
     yield
 

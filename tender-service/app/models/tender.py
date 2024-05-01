@@ -13,6 +13,7 @@ class Tender(Document):
     law: Link[FederalLaw]
     purchase_stage: Link[PurchaseStage]
     price: float
+    type: str
     placement_date: datetime
     start_date: datetime
     end_date: datetime
