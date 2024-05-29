@@ -10,20 +10,27 @@ from app.schemas.stage import StageGetView
 tender_router = APIRouter(prefix="/tender")
 
 @tender_router.get("/search", response_model = List[TenderGetView], status_code=200)
-async def search(search: str, law: str | None = None, stage: str | None = None):
-    results = await CRUD.search_tender(search, law, stage)
+async def search(
+    name: str | None = None,
+    number: str | None = None,
+    law: str | None = None,
+    stage: str | None = None,
+    min_price: str | None = None,
+    max_price: str | None = None,
+    placement_date: str | None = None,
+    end_date: str | None = None,
+    ):
+    results = await CRUD.search_tender(name, number, law, stage, min_price, max_price, placement_date, end_date)
     return results
 
-# насчет эндпоинта хз пока
-@tender_router.get("/law", response_model = List[LawGetView], status_code=200)
+@tender_router.get("/law", response_model = LawGetView, status_code=200)
 async def get_law(law):
     res = await CRUD.get_one_law(law)
     if not res:
         raise HTTPException(status_code=404, detail="Item not found")
     return res
 
-# насчет эндпоинта хз пока
-@tender_router.get("/stage", response_model = List[StageGetView], status_code=200)
+@tender_router.get("/stage", response_model = StageGetView, status_code=200)
 async def get_stage(stage):
     res = await CRUD.get_one_stage(stage)
     if not res:
